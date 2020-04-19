@@ -12,6 +12,12 @@
 }:
 
 let maintainers = { alp = "alp"; };
+    patchdir = ./patches;
+    ffmpeg_patched = ffmpeg.override { patches = [ "${patchdir}/change-RTCP-ratio.patch" ]; };
+    gnutls_patched = gnutls.overrideAttrs (oldAttrs: rec {
+      patches = oldAttrs.patches ++ [ "${patchdir}/read-file-limits.h.patch" ];
+      doCheck = false;
+    });
 in
 
 stdenv.mkDerivation rec {
@@ -24,8 +30,8 @@ stdenv.mkDerivation rec {
 
   buildInputs =
     [ jsoncpp zlib pjsip libyamlcpp alsaLib libpulseaudio
-      openssl ffmpeg libudev speex secp256k1 opendht
-      msgpack libupnp libnatpmp gnutls asio readline
+      openssl ffmpeg_patched libudev speex secp256k1 opendht
+      msgpack libupnp libnatpmp gnutls_patched asio readline
       libargon2
     ];
 

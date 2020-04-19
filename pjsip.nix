@@ -11,7 +11,19 @@ stdenv.mkDerivation rec {
     sha256 = "1aklicpgwc88578k03i5d5cm5h8mfm7hmx8vfprchbmaa2p8f4z0";
   };
 
-  patches = [ ];
+  patchdir = ./patches;
+
+  patches = [
+    "${patchdir}/0001-rfc6544.patch"
+    "${patchdir}/0002-rfc2466.patch"
+    "${patchdir}/0003-add-tcp-keep-alive.patch"
+    "${patchdir}/0004-multiple_listeners.patch"
+    "${patchdir}/0005-fix_ebusy_turn.patch"
+    "${patchdir}/0006-ignore_ipv6_on_transport_check.patch"
+    "${patchdir}/0007-pj_ice_sess.patch"
+    "${patchdir}/0008-fix_ioqueue_ipv6_sendto.patch"
+    "${patchdir}/0009-add-config-site.patch"
+  ];
 
   buildInputs = [ openssl libsamplerate alsaLib ];
 
