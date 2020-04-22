@@ -26,7 +26,13 @@ stdenv.mkDerivation rec {
     sha256 = "1252nqsqmcph548b4fba5qg8ic27l5b4h0s6m6wy8qbb9dg99b1q";
   };
 
+  # for some reason, the gnome client's web/ folder contains
+  # symlinks to files that live in libringclient's repo,
+  # assuming we're working from the ring-project repo that
+  # has everything as submodules.
+  # instead I remove the symlinks and copy the relevant files
   preConfigure = ''
+    rm -rf ./web/*
     cmd="cp ${lrc.src}/src/web-chatview/* ./web/"
     echo "copying: $cmd"
     $cmd
