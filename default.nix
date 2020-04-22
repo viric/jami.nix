@@ -27,7 +27,7 @@ let
   # hopefully that won't bite us in the ass, but the tls
   # patches only seem required for the daemon, hopefully it's
   # fine.
-  ring-client-gnome = (pkgs {}).callPackage ./ring-client-gnome.nix {
+  ring-client-gnome = (pkgs {}).libsForQt5.callPackage ./ring-client-gnome.nix {
     inherit (jamiPkgs) lrc qtbase;
   };
 

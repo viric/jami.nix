@@ -1,10 +1,11 @@
-{ stdenv, fetchgit
+{ stdenv, mkDerivation, fetchgit
 , cmake, pkgconfig, git, doxygen, graphviz
 , lrc, gtk3, qtbase, pcre, libpthreadstubs, libXdmcp
 , clutter, clutter-gtk, libqrencode, webkitgtk
 , libnotify, libcanberra-gtk3, libappindicator-gtk3
 , utillinuxMinimal, libselinux, libsepol, epoxy, at-spi2-core
 , libXtst, libpsl, networkmanager
+, gnome3, wrapGAppsHook
 }:
 
 stdenv.mkDerivation rec {
@@ -18,6 +19,7 @@ stdenv.mkDerivation rec {
       utillinuxMinimal # for 'mount' package (lib?)
       libselinux libsepol epoxy at-spi2-core libXtst
       libpsl networkmanager
+      gnome3.adwaita-icon-theme wrapGAppsHook
     ];
 
   src = fetchgit {
