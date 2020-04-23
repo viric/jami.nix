@@ -1,25 +1,26 @@
-{ stdenv, mkDerivation, fetchgit
+{ stdenv, fetchgit
 , cmake, pkgconfig, git, doxygen, graphviz
 , lrc, gtk3, qtbase, pcre, libpthreadstubs, libXdmcp
 , clutter, clutter-gtk, libqrencode, webkitgtk
 , libnotify, libcanberra-gtk3, libappindicator-gtk3
 , utillinuxMinimal, libselinux, libsepol, epoxy, at-spi2-core
 , libXtst, libpsl, networkmanager
-, gnome3, wrapGAppsHook
+, gnome3, wrapGAppsHook, wrapQtAppsHook
 }:
 
 stdenv.mkDerivation rec {
   pname = "ring-client-gnome";
   version = src.rev;
-  nativeBuildInputs = [ cmake pkgconfig git doxygen graphviz ];
+  nativeBuildInputs = [ cmake pkgconfig git doxygen graphviz  wrapQtAppsHook ];
   buildInputs =
-    [ lrc gtk3 qtbase pcre libpthreadstubs libXdmcp clutter
+    [ lrc gtk3 pcre libpthreadstubs libXdmcp clutter
       clutter-gtk libqrencode webkitgtk libnotify
       libcanberra-gtk3 libappindicator-gtk3
       utillinuxMinimal # for 'mount' package (lib?)
       libselinux libsepol epoxy at-spi2-core libXtst
       libpsl networkmanager
       gnome3.adwaita-icon-theme wrapGAppsHook
+      qtbase
     ];
 
   src = fetchgit {

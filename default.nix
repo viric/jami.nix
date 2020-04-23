@@ -14,7 +14,11 @@ let
     pjsip = self.callPackage ./pjsip.nix {};
     restinio = self.callPackage ./restinio.nix {};
     ring-daemon = self.callPackage ./daemon.nix {};
-    inherit (super.qt5) qtbase qttools;
+    inherit (super.qt5) qttools wrapQtAppsHook;
+    qtbase = super.buildEnv {
+      name = "qtbase-${super.qt5.qtbase.version}-fixed";
+      paths = [ super.qt5.qtbase.bin ];
+    };
     lrc = self.callPackage ./lrc.nix {};
   };
   jamiPkgs = pkgs { overlays = [jamiOverlay]; };
@@ -27,8 +31,8 @@ let
   # hopefully that won't bite us in the ass, but the tls
   # patches only seem required for the daemon, hopefully it's
   # fine.
-  ring-client-gnome = (pkgs {}).libsForQt5.callPackage ./ring-client-gnome.nix {
-    inherit (jamiPkgs) lrc qtbase;
+  ring-client-gnome = (pkgs {}).callPackage ./ring-client-gnome.nix {
+    inherit (jamiPkgs) lrc qtbase wrapQtAppsHook;
   };
 
 in
