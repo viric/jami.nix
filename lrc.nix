@@ -20,8 +20,8 @@ stdenv.mkDerivation rec {
 
   src = fetchgit {
     url = "https://git.jami.net/savoirfairelinux/ring-lrc.git";
-    rev = "559bbba0a9f632ae554bfe9cfc2edf72efee6b0a";
-    sha256 = "0ws4r1an7kix681r0yxv32rskk63zgp0lbdgn7dsdx2r4gypx3p9";
+    rev = "8f282fe14fb183e7a6e3b7de4b2ed81fd612b68c";
+    sha256 = "0n4wjwj7i90vj2y71k5fqx24a00yz7xsmcds6ll0rrjrc1g7qf1d";
   };
 
   meta = with stdenv.lib; {

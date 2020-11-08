@@ -7,8 +7,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "aberaud";
     repo = "restinio";
-    rev = "a7a10e419d9089c5b8ee63f5e3098c892f22fae4";
-    sha256 = "07x3lxrygaj33gamqykr1737qzr6ljav7hdx08k7ida3gd3r4ski";
+    rev = "7743d63325ad20ac87331c110f064f5f55defb40";
+    sha256 = "1l98rvakaiz82qbiazb0yl6czajmmqcpdfydazndwnjbiq30c1nl";
   };
 
   installPhase = ''

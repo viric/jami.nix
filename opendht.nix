@@ -12,8 +12,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "savoirfairelinux";
     repo = "opendht";
-    rev = "7628aab230ea78cae52a8e57a32a150a13b17275";
-    sha256 = "1q1fwk8wwk9r6bp0indpr60ql668lsk16ykslacyhrh7kg97kvhr";
+    rev = "05b95331d8fa5159a69e6c8fd6dae8135a805bf9"; # 2020-11-4
+    sha256 = "0877b6njypwcal5xz6ab2bhzdps0m5zv7qw9wj2fx4sgk1x5alnc";
   };
 
   nativeBuildInputs =
@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
       pkg-config
     ];
 
-  cmakeFlags = [ "-DOPENDHT_HTTP=ON" ];
+  cmakeFlags = [ "-DOPENDHT_HTTP=ON" "-DOPENDHT_STATIC=OFF" ];
 
   buildInputs =
     [ asio nettle gnutls msgpack readline libargon2
