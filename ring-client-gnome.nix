@@ -25,8 +25,8 @@ stdenv.mkDerivation rec {
 
   src = fetchgit {
     url = "https://git.jami.net/savoirfairelinux/ring-client-gnome.git";
-    rev = "f8a77091b84d3bcbe415db0e4e26f70eb7c7e18e";
-    sha256 = "1252nqsqmcph548b4fba5qg8ic27l5b4h0s6m6wy8qbb9dg99b1q";
+    rev = "f505a548ac8e659e6d03676260c7f0f8dbe17d86";
+    sha256 = "193v0zyp9bknkw9dxl8mzv6w6cmpzklq3ba195m9afy9k55jn6p7";
   };
 
   # for some reason, the gnome client's web/ folder contains
