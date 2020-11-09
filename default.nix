@@ -33,7 +33,7 @@ let
           "${patchdir}/0009-add-config-site.patch"
           "${patchdir}/0011-fix-tcp-death-detection.patch"
           "${patchdir}/0012-fix-turn-shutdown-crash.patch"
-          #"${patchdir}/0013-Assign-unique-local-preferences-for-candidates-with-.patch"
+          "${patchdir}/0013-Assign-unique-local-preferences-for-candidates-with-.patch"
           "${patchdir}/0014-Add-new-compile-time-setting-PJ_ICE_ST_USE_TURN_PERM.patch"
           "${patchdir}/0015-update-local-preference-for-peer-reflexive-candidate.patch"
           "${patchdir}/0016-use-addrinfo-instead-CFHOST.patch"

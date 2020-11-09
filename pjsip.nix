@@ -19,6 +19,10 @@ stdenv.mkDerivation rec {
     export LD=$CC
   '';
 
+  configureFlagsArray = [ "CFLAGS=-O2 -DNDEBUG" ];
+
+  patchFlags = "-flp1";
+
   postInstall = ''
     mkdir -p $out/bin
     cp pjsip-apps/bin/pjsua-* $out/bin/pjsua
