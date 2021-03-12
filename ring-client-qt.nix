@@ -1,5 +1,5 @@
 { stdenv, fetchgit
-, qtbase, qmake, qtquickcontrols2, qtwebengine, qrencode, ring-daemon
+, qtbase, cmake, qtquickcontrols2, qtwebengine, qrencode, ring-daemon
 , qtgraphicaleffects, networkmanager, pkgconfig
 , wrapQtAppsHook
 , lrc
@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
   pname = "ring-client-qt";
   version = src.rev;
   buildInputs =
-    [ qtbase qmake qtquickcontrols2 qtwebengine lrc qrencode
+    [ qtbase cmake qtquickcontrols2 qtwebengine lrc qrencode
     wrapQtAppsHook qtgraphicaleffects networkmanager pkgconfig
     ];
 
@@ -23,8 +23,6 @@ stdenv.mkDerivation rec {
     cp -r ${ring-daemon.src} ../daemon
     cp -r ${lrc.src} ../lrc
   '';
-
-  qmakeFlags = "LRC=${lrc}";
 
   meta = with stdenv.lib; {
     description = "Jami Qt client";
