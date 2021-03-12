@@ -40,8 +40,8 @@ stdenv.mkDerivation rec {
 
   src = fetchgit {
     url = "https://git.jami.net/savoirfairelinux/ring-daemon.git";
-    rev = "7eb1e7373d48fa4c23f142b0b70c09f437d22e36";
-    sha256 = "054pg94vhcy7n5mdx6q1lwraq6rv5w7hqqvpjxnjp1z3x4462x1b";
+    rev = "821ec73a3d9dc617de4236e2013735cea8e95eb3";
+    sha256 = "0i041yl9ab526apclp5194aifmd2qx3q7mrs9dnswz6rjsfasw4y";
   };
 
 

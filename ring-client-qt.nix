@@ -1,6 +1,6 @@
 { stdenv, fetchgit
 , qtbase, qmake, qtquickcontrols2, qtwebengine, qrencode, ring-daemon
-, qtgraphicaleffects
+, qtgraphicaleffects, networkmanager, pkgconfig
 , wrapQtAppsHook
 , lrc
 }:
@@ -10,13 +10,13 @@ stdenv.mkDerivation rec {
   version = src.rev;
   buildInputs =
     [ qtbase qmake qtquickcontrols2 qtwebengine lrc qrencode
-    wrapQtAppsHook qtgraphicaleffects
+    wrapQtAppsHook qtgraphicaleffects networkmanager pkgconfig
     ];
 
   src = fetchgit {
     url = "https://review.jami.net/jami-client-qt";
-    rev = "310adb9aa1b6db4d238dd22aa2119ce5fbabdea7";
-    sha256 = "1bmarf9kygw3lsxs2lpxmz4yhdpqcamwps77cpd0z736j2ky939w";
+    rev = "1d026c7bfedf447cc7a4de9574e46a22936ffbce";
+    sha256 = "0fsnhgdlcyg6ns1sr4c9in5p9zskph74k34jjw0r8v7i6aq1arxv";
   };
 
   preBuild = ''

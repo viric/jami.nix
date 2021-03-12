@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "pjsip";
-  version = "3e7b75cb2e482baee58c1991bd2fa4fb06774e0d";
+  version = "2.10";
 
   src = fetchFromGitHub {
     owner = pname;

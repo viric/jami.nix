@@ -27,19 +27,16 @@ let
           "${patchdir}/0004-multiple_listeners.patch"
           "${patchdir}/0005-fix_ebusy_turn.patch"
           "${patchdir}/0006-ignore_ipv6_on_transport_check.patch"
-          "${patchdir}/0007-pj_ice_sess.patch"
           "${patchdir}/0007-upnp-srflx-nat-assisted-cand.patch"
           "${patchdir}/0008-fix_ioqueue_ipv6_sendto.patch"
           "${patchdir}/0009-add-config-site.patch"
+          "${patchdir}/0010-fix-pkgconfig.patch"
           "${patchdir}/0011-fix-tcp-death-detection.patch"
           "${patchdir}/0012-fix-turn-shutdown-crash.patch"
           "${patchdir}/0013-Assign-unique-local-preferences-for-candidates-with-.patch"
           "${patchdir}/0014-Add-new-compile-time-setting-PJ_ICE_ST_USE_TURN_PERM.patch"
           "${patchdir}/0015-update-local-preference-for-peer-reflexive-candidate.patch"
           "${patchdir}/0016-use-addrinfo-instead-CFHOST.patch"
-          #"${patchdir}/0001-win-config.patch"
-          #"${patchdir}/0002-win-vs-gnutls.patch"
-          #"${patchdir}/0003-win-vs2017-props.patch"
         ];
     };
     restinio = self.callPackage ./restinio.nix {};

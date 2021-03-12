@@ -12,8 +12,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "savoirfairelinux";
     repo = "opendht";
-    rev = "05b95331d8fa5159a69e6c8fd6dae8135a805bf9"; # 2020-11-4
-    sha256 = "0877b6njypwcal5xz6ab2bhzdps0m5zv7qw9wj2fx4sgk1x5alnc";
+    rev = "2256434ec7a81c8d98fcaab623cd3b75a413e4ce"; # 2021-03-12
+    sha256 = "048jrma99snq6mjv8lfmmqkkrd7rlldbfknqci7baainy4q80j0w";
   };
 
   nativeBuildInputs =
